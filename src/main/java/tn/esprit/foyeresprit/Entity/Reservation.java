@@ -15,7 +15,6 @@ import java.util.List;
 @Setter
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String idReservation;
     private Long numeroChambre;
     private Boolean estValide;
