@@ -1,10 +1,12 @@
 package tn.esprit.foyeresprit.Service;
 
+import org.springframework.stereotype.Service;
 import tn.esprit.foyeresprit.Entity.Reservation;
 import tn.esprit.foyeresprit.Repository.ReservationRepository;
 
 import java.util.List;
 
+@Service
 public class ReservationServiceImpl implements IReservationService{
 
     private ReservationRepository reservationRepository;
@@ -25,7 +27,8 @@ public class ReservationServiceImpl implements IReservationService{
         return reservationRepository.save(reservation);
     }
 
-    public void deleteReservation(Reservation reservation) {
-        reservationRepository.delete(reservation);
+    public void deleteReservation(Long idReservation) {
+        reservationRepository.deleteById (idReservation);
     }
+
 }

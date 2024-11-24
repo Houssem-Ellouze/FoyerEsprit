@@ -1,10 +1,12 @@
 package tn.esprit.foyeresprit.Service;
 
+import org.springframework.stereotype.Service;
 import tn.esprit.foyeresprit.Entity.Bloc;
 import tn.esprit.foyeresprit.Repository.BlocRepository;
 
 import java.util.List;
 
+@Service
 public class BlocServiceImpl implements IBlocService{
 
     private BlocRepository blocRepository;
@@ -21,8 +23,8 @@ public class BlocServiceImpl implements IBlocService{
         return blocRepository.save(bloc);
     }
 
-    public void deleteBloc(Bloc bloc) {
-        blocRepository.delete(bloc);
+    public void deleteBloc(Long idBloc) {
+        blocRepository.deleteById (idBloc);
     }
 
     public List<Bloc> getAllBloc() {
