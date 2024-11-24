@@ -11,28 +11,28 @@ import java.util.List;
 @Tag ( name = "EtudiantController" )
 @RestController
 @AllArgsConstructor
-@RequestMapping
+@RequestMapping("/etudiant")
 public class EtudiantController {
 
     IEtudiantService etudiantService;
 
-    @GetMapping
+    @GetMapping("Get_All")
     public List<Etudiant> getAllEtudiant(){
         return etudiantService.getEtudiants ();
     }
-    @GetMapping
+    @GetMapping("Get_By_Id")
     public Etudiant getEtudiantById(Long id){
         return etudiantService.getEtudiantById ( id );
     }
-    @PostMapping
+    @PostMapping("/add")
     public Etudiant addEtudiant(Etudiant etudiant){
         return etudiantService.addEtudiant ( etudiant );
     }
-    @PutMapping
+    @PutMapping("/update")
     public Etudiant updateEtudiant(Etudiant etudiant){
         return etudiantService.updateEtudiant ( etudiant );
     }
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public void deleteEtudiantById(Long id){
         etudiantService.deleteEtudiant ( id );
     }

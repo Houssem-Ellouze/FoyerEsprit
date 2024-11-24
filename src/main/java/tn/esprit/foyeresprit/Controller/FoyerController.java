@@ -12,29 +12,28 @@ import java.util.List;
 @Tag ( name = "FoyerController")
 @RestController
 @AllArgsConstructor
-@RequestMapping
+@RequestMapping("/foyer")
 public class FoyerController {
 
     IFoyerService foyerService;
 
-    @GetMapping
+    @GetMapping("/Get_All")
     public List<Foyer> getAllFoyer(){
         return foyerService.getAllFoyers ();
     }
-    @GetMapping
+    @GetMapping("/Get_By_Id")
     public Foyer getFoyerById(Long id){
         return foyerService.getFoyerById ( id );
     }
-    @PostMapping
+    @PostMapping("/add")
     public Foyer addFoyer(Foyer foyer){
         return foyerService.addFoyer ( foyer );
     }
-
-    @PutMapping
+    @PutMapping("/update")
     public Foyer updateFoyer(Foyer foyer){
         return foyerService.updateFoyer ( foyer );
     }
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public void deleteFoyer(Long id){
         foyerService.deleteFoyer ( id );
     }

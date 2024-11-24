@@ -16,23 +16,23 @@ public class UniversiteController {
 
     IUniversiteService universiteService;
 
-    @GetMapping
+    @GetMapping("Get_All")
     public List<Universite> getAll() {
         return universiteService.getUniversites ();
     }
-    @GetMapping
+    @GetMapping("Get_By_Id")
     public Universite getById(@PathVariable Long idUniversite) {
         return universiteService.getUniversiteById (idUniversite);
     }
-    @PostMapping
+    @PostMapping("/add")
     public Universite create(@RequestBody Universite universite) {
         return universiteService.addUniversite ( universite );
     }
-    @PutMapping
+    @PutMapping("/update")
     public Universite update(@RequestBody Universite universite) {
         return universiteService.updateUniversite ( universite );
     }
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public void delete(@PathVariable Long idUniversite) {
         universiteService.deleteUniversite ( idUniversite );
     }

@@ -11,28 +11,28 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @Tag ( name = "ReservationController")
-@RequestMapping
+@RequestMapping("/reservation")
 public class ReservationController {
 
     IReservationService reservationService;
 
-    @GetMapping
+    @GetMapping("/Get_All")
     public List<Reservation> getAllReservations() {
         return reservationService.getAllReservations();
     }
-    @GetMapping
+    @GetMapping("/Get_By_Id")
     public Reservation getReservationById(Long id) {
         return reservationService.getReservationById ( id );
     }
-    @PostMapping
+    @PostMapping("/add")
     public Reservation createReservation(@RequestBody Reservation reservation) {
         return reservationService.addReservation ( reservation );
     }
-    @PutMapping
+    @PutMapping("/update")
     public Reservation updateReservation(@RequestBody Reservation reservation) {
         return reservationService.updateReservation ( reservation );
     }
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public void deleteReservationById(Long id) {
         reservationService.deleteReservation ( id );
     }

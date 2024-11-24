@@ -11,28 +11,28 @@ import java.util.List;
 @Tag ( name = "ChambreController" )
 @AllArgsConstructor
 @RestController
-@RequestMapping
+@RequestMapping("/chambre")
 public class ChambreController {
 
     private IChambreService chambreService;
 
-    @GetMapping
+    @GetMapping("/Get_All")
     public List<Chambre> chambre() {
         return chambreService.getAllChambre ();
     }
-    @GetMapping
+    @GetMapping("/Get_By_Id")
     public Chambre chambreById(Long id) {
         return chambreService.getChambreById ( id );
     }
-    @PostMapping
+    @PostMapping("/add")
     public Chambre addChambre(@RequestBody Chambre chambre) {
         return chambreService.addChambre ( chambre );
     }
-    @PutMapping
+    @PutMapping("/update")
     public Chambre updateChambre(@RequestBody Chambre chambre) {
         return chambreService.updateChambre ( chambre );
     }
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public void deleteChambre(Long id) {
         chambreService.deleteChambre ( id );
     }

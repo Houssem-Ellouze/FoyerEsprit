@@ -11,28 +11,28 @@ import java.util.List;
 @Tag ( name = "BlocController" )
 @AllArgsConstructor
 @RestController
-@RequestMapping
+@RequestMapping("/bloc")
 public class BlocController {
 
     IBlocService blocService;
 
-    @GetMapping
+    @GetMapping("/Get_All")
     public List<Bloc> getAll() {
         return blocService.getAllBloc ();
     }
-    @GetMapping
+    @GetMapping("/Get_By_Id")
     public Bloc getById(Long id) {
         return blocService.getBlocById ( id );
     }
-    @PostMapping
+    @PostMapping("/add")
     public Bloc create(Bloc bloc) {
         return blocService.addBloc ( bloc );
     }
-    @PutMapping
+    @PutMapping("/update")
     public Bloc update(Bloc bloc) {
         return blocService.updateBloc ( bloc );
     }
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public void deleteById(Long id) {
         blocService.deleteBloc ( id );
     }
