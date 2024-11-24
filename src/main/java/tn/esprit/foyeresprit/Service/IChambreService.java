@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface IChambreService {
     Chambre addChambre(Chambre chambre);
-    Chambre getChambre(int id);
+    Chambre getChambre(Long id);
     Chambre updateChambre(Chambre chambre);
-    void deleteChambre(int id);
+    void deleteChambre(Long id);
     List<Chambre> getAllChambre();
 }

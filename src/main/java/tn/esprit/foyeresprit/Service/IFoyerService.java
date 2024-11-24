@@ -9,5 +9,5 @@ public interface IFoyerService {
     Foyer updateFoyer(Foyer foyer);
     void deleteFoyer(Foyer foyer);
     List<Foyer> getAllFoyers();
-    Foyer getFoyerById(int id);
+    Foyer getFoyerById(Long id);
 }
