@@ -5,9 +5,9 @@ import tn.esprit.foyeresprit.Entity.Etudiant;
 import java.util.List;
 
 public interface IEtudiantService {
-    Etudiant getEtudiant(Long id);
+    Etudiant getEtudiant(Long idEtudiant);
     List<Etudiant> getEtudiants();
     Etudiant addEtudiant(Etudiant et);
     Etudiant updateEtudiant(Etudiant et);
-    void deleteEtudiant(Long id);
+    void deleteEtudiant(Long idEtudiant);
 }
